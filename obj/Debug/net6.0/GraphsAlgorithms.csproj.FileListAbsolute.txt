@@ -1,0 +1,15 @@
+D:\Projects\GraphsAlgorithms\bin\Debug\net6.0\GraphsAlgorithms.exe
+D:\Projects\GraphsAlgorithms\bin\Debug\net6.0\GraphsAlgorithms.deps.json
+D:\Projects\GraphsAlgorithms\bin\Debug\net6.0\GraphsAlgorithms.runtimeconfig.json
+D:\Projects\GraphsAlgorithms\bin\Debug\net6.0\GraphsAlgorithms.dll
+D:\Projects\GraphsAlgorithms\bin\Debug\net6.0\GraphsAlgorithms.pdb
+D:\Projects\GraphsAlgorithms\obj\Debug\net6.0\GraphsAlgorithms.csproj.AssemblyReference.cache
+D:\Projects\GraphsAlgorithms\obj\Debug\net6.0\GraphsAlgorithms.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\GraphsAlgorithms\obj\Debug\net6.0\GraphsAlgorithms.AssemblyInfoInputs.cache
+D:\Projects\GraphsAlgorithms\obj\Debug\net6.0\GraphsAlgorithms.AssemblyInfo.cs
+D:\Projects\GraphsAlgorithms\obj\Debug\net6.0\GraphsAlgorithms.csproj.CoreCompileInputs.cache
+D:\Projects\GraphsAlgorithms\obj\Debug\net6.0\GraphsAlgorithms.dll
+D:\Projects\GraphsAlgorithms\obj\Debug\net6.0\refint\GraphsAlgorithms.dll
+D:\Projects\GraphsAlgorithms\obj\Debug\net6.0\GraphsAlgorithms.pdb
+D:\Projects\GraphsAlgorithms\obj\Debug\net6.0\GraphsAlgorithms.genruntimeconfig.cache
+D:\Projects\GraphsAlgorithms\obj\Debug\net6.0\ref\GraphsAlgorithms.dll
