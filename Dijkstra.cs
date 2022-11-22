@@ -8,19 +8,13 @@ namespace GraphsAlgorithms
 {
     public class Dijkstra
     {
-        private class DijkstraData
-        {
-            public Node Previous;
-            public int Cost;
-        }
-
         public static Tuple<int, List<Node>> FindSP(Graph graph, Node start, Node end)
         {
-            var track = new Dictionary<Node, DijkstraData>();
+            var track = new Dictionary<Node, BackTrackData>();
 
             var notVisited = graph.Nodes.ToList();
 
-            track[start] = new DijkstraData { Cost = 0, Previous = null };
+            track[start] = new BackTrackData { Cost = 0, Previous = null };
             
             while (true)
             {
@@ -47,7 +41,7 @@ namespace GraphsAlgorithms
                     var nextNode = edge.To;
 
                     if (!track.ContainsKey(nextNode) || track[nextNode].Cost > minPrice)
-                        track[nextNode] = new DijkstraData { Cost = minPrice, Previous = toNode };
+                        track[nextNode] = new BackTrackData { Cost = minPrice, Previous = toNode };
                 }
 
                 notVisited.Remove(toNode);
@@ -56,7 +50,7 @@ namespace GraphsAlgorithms
             return Tuple.Create(track[end].Cost, TranslateDictPathToList(track, end));
         }
 
-        private static List<Node> TranslateDictPathToList(Dictionary<Node, DijkstraData> path, Node end)
+        private static List<Node> TranslateDictPathToList(Dictionary<Node, BackTrackData> path, Node end)
         {
             var shortestPath = new List<Node>();
 

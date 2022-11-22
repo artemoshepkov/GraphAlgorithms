@@ -16,6 +16,40 @@
 
             var edgesWeight = new int[] { 1, 3, 4, 7, 5, 6, 9, 2, 8 };
 
+            FordBellmanTestGraph(nodes, edgesWeight);
+        }
+
+        private static void FordBellmanTestGraph(int[] nodes, int[] edgesWeight)
+        {
+            var graph = Graph.MakeGraph(nodes, edgesWeight);
+
+            Console.WriteLine("Graph:");
+            foreach (var edge in graph.Edges)
+                Console.WriteLine(edge);
+
+            var shortestPath = FordBellman.GetMinPath(graph, graph[0], graph[5]);
+
+            Console.WriteLine("\nMin path: " + shortestPath.Item1);
+            foreach (var node in shortestPath.Item2)
+                Console.Write(node + " ");
+            Console.WriteLine();
+            Console.WriteLine(String.Concat(Enumerable.Repeat("-", 30)));
+        }
+
+        private static void DijkstraTest()
+        {
+            var nodes = new int[] { 0, 1,
+                                    0, 2,
+                                    1, 2,
+                                    1, 3,
+                                    1, 4,
+            2, 4,
+            4, 3,
+            3, 5,
+            4, 5};
+
+            var edgesWeight = new int[] { 1, 3, 4, 7, 5, 6, 9, 2, 8 };
+
             DijkstraTestGraph(nodes, edgesWeight);
         }
 
@@ -92,5 +126,11 @@
                 Console.WriteLine(edge);
             Console.WriteLine(String.Concat(Enumerable.Repeat("-", 30)));
         }
+    }
+
+    public class BackTrackData
+    {
+        public Node Previous;
+        public int Cost;
     }
 }
