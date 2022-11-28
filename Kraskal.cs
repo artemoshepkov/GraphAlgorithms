@@ -23,6 +23,7 @@ namespace GraphsAlgorithms
                     OperationsAmount++;
 
                     OperationsAmount += connectComponent[i].Count;
+
                     if (connectComponent[i].Contains(edge.From))
                         listNumber1 = i;
 
@@ -64,7 +65,6 @@ namespace GraphsAlgorithms
                 spanningTree.Add(edge);
                 OperationsAmount += 3;
             }
-
 
             return spanningTree;
         }

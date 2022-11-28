@@ -74,6 +74,17 @@ namespace GraphsAlgorithms
         {
             return Number.ToString();
         }
+
+        public override bool Equals(object? obj)
+        {
+            var other = obj as Node;
+            return this.Number == other.Number;
+        }
+
+        public override int GetHashCode()
+        {
+            return Number;
+        }
     }
 
     public class Graph

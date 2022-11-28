@@ -12,9 +12,9 @@ namespace GraphsAlgorithms
         {
             var track = new Dictionary<Node, BackTrackData>();
 
-            var notVisited = graph.Nodes.ToList();
-
             track[start] = new BackTrackData { Cost = 0, Previous = null };
+
+            var notVisited = graph.Nodes.ToList();
             
             while (true)
             {

@@ -19,35 +19,39 @@ namespace GraphsAlgorithms
             path[startNode] = null;
 
             //for (var i = 1; i <= maxNodeIndex; i++)
-            //{
-            foreach (var edge in graph.Edges)
             {
-                if (opt[edge.From.Number] != int.MaxValue)
+                foreach (var edge in graph.Edges)
                 {
-                    if (opt[edge.To.Number] < opt[edge.From.Number] + edge.Weight)
+                    if (opt[edge.From.Number] != int.MaxValue)
                     {
-                        continue;
+                        if (opt[edge.To.Number] < opt[edge.From.Number] + edge.Weight)
+                        {
+                            continue;
+                        }
+
+                        opt[edge.To.Number] = opt[edge.From.Number] + edge.Weight;
+
+                        path[edge.To] = edge.From;
                     }
-
-                    opt[edge.To.Number] = opt[edge.From.Number] + edge.Weight;
-
-                    path[edge.To] = edge.From;
                 }
             }
-            //}    
 
-            return Tuple.Create(opt[finalNode.Number], TranslateDictPathToList(path, finalNode));
+            if (!path.ContainsKey(finalNode))
+                return null;
+
+            return Tuple.Create(opt[finalNode.Number], TranslateDictPathToList(path, startNode, finalNode));
         }
 
-        private static List<Node> TranslateDictPathToList(Dictionary<Node, Node> path, Node end)
+        private static List<Node> TranslateDictPathToList(Dictionary<Node, Node> path, Node start, Node end)
         {
             var shortestPath = new List<Node>();
 
-            while (end != null)
+            while (end != start)
             {
                 shortestPath.Add(end);
                 end = path[end];
             }
+            shortestPath.Add(start);
             shortestPath.Reverse();
 
             return shortestPath;
